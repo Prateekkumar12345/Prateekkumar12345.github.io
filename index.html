@@ -169,11 +169,15 @@ section{padding:60px 0;overflow:hidden}
 .btn-resume:hover{background:var(--accent-hover);color:#fff}
 
 /* ---------- SKILLS ---------- */
+.skill-panel{padding:24px 26px;background:#fff;border:1px solid #e3eaf2;border-top:3px solid rgba(20,157,221,.45);border-radius:4px;box-shadow:0 8px 25px rgba(68,88,144,.1)}
+.skill-panel h3{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--navy);font:700 18px "Poppins",sans-serif}
+.skill-panel h3 i{color:var(--accent);font-size:21px}
 .progress{padding-bottom:14px}
 .progress .skill{display:block;padding:10px 0;font:600 14px "Poppins",sans-serif;text-transform:uppercase;color:var(--ink)}
 .progress .skill i{float:right;font-style:normal;font-size:14px;color:var(--muted)}
 .bar-wrap{height:10px;background:#dce8f8}
 .bar{height:10px;background:var(--accent);transition:width .9s}
+.skill-note{margin:24px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
 
 /* ---------- CERTIFICATIONS / EVENTS ---------- */
 .cert-card{display:block;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
@@ -216,6 +220,32 @@ section{padding:60px 0;overflow:hidden}
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+/* ---------- PROFESSIONAL LAYOUT ---------- */
+#hero{min-height:620px}
+#hero .hero-content{max-width:1280px;padding:0 44px}
+#hero .hero-copy{padding:28px 0;border-left:4px solid var(--accent);padding-left:32px}
+#hero h1{font-size:clamp(3rem,6vw,5.2rem);letter-spacing:-.04em}
+#hero p{font-size:24px}
+#hero .hero-visual{border-radius:12px;border-width:5px;box-shadow:0 24px 55px rgba(4,11,20,.38);transform:none}
+#hero .hero-visual img{border-radius:7px}
+.section-title{position:relative;padding-left:22px}
+.section-title h2{font-size:34px;letter-spacing:-.02em}
+.section-title p{line-height:1.8;color:#5f7180}
+.count-box,.icon-box{border:1px solid #e3eaf2;border-top:3px solid rgba(20,157,221,.45);border-radius:4px;box-shadow:0 8px 25px rgba(68,88,144,.1)}
+.count-box{padding:28px}
+.count-box:hover,.icon-box:hover{transform:translateY(-5px);box-shadow:0 16px 35px rgba(68,88,144,.16)}
+.icon-box{padding:34px 26px}
+.portfolio-wrap{border-radius:4px;box-shadow:0 10px 28px rgba(68,88,144,.16)}
+.portfolio-thumb span{font-size:15px;line-height:1.35}
+#project-filters{box-shadow:0 4px 16px rgba(68,88,144,.08);border:1px solid #e3eaf2}
+#project-filters button{padding:11px 17px}
+.resume-item{padding-bottom:28px}
+.resume-item h5{border-left:3px solid var(--accent);border-radius:0;background:#f5f8fd}
+.cert-card,.event-card{border-radius:4px;box-shadow:0 8px 25px rgba(68,88,144,.12);border:1px solid #e3eaf2}
+.contact-form{padding:24px;border-radius:4px;box-shadow:0 8px 25px rgba(68,88,144,.12)}
+.contact-form input,.contact-form textarea{border-radius:3px;background:#fff}
+@media(max-width:1199px){#main{margin-left:0}}
 </style>
 </head>
 <body>
@@ -352,7 +382,7 @@ section{padding:60px 0;overflow:hidden}
       <div class="facts grid g3 keep2">
         <div class="count-box">
           <div class="top"><i class="bi bi-journal-richtext"></i><span class="num" data-count="53">53</span></div>
-          <h5>Projects Delivered</h5>
+          <h5>Projects Done</h5>
           <ul><li>Machine Learning</li><li>Generative AI</li><li>Computer Vision</li><li>Agents &amp; RAG</li><li>Data Visualization</li></ul>
         </div>
         <div class="count-box">
@@ -426,10 +456,10 @@ section{padding:60px 0;overflow:hidden}
   <section id="portfolio" class="portfolio">
     <div class="container">
       <div class="section-title">
-        <h2>Portfolio</h2>
+        <h2>Projects</h2>
         <p>Throughout my journey from research labs to product internships, I have focused on building intelligent systems that bridge research and real-world impact — spanning RAG pipelines, multi-agent reasoning, recommendation systems, and computer vision solutions. Recent GitHub projects are shown first by repository activity.</p>
       </div>
-
+      
       
 
       <div class="grid g3 keep2">
@@ -558,31 +588,33 @@ section{padding:60px 0;overflow:hidden}
     <div class="container">
       <div class="section-title">
         <h2>Skills</h2>
-        <p>Languages, AI/ML frameworks and data tools I use day to day.</p>
+        <p>A practical toolkit for turning data, models, and product ideas into working intelligent systems.</p>
       </div>
 
-      <div class="grid g2" id="skill-grid" style="column-gap:60px;row-gap:0">
-        <div>
+      <div class="grid g2" id="skill-grid">
+        <div class="skill-panel">
+          <h3><i class="bi bi-cpu"></i> AI &amp; Machine Learning</h3>
           <div class="progress"><span class="skill">Python <i>90%</i></span><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></div>
-          <div class="progress"><span class="skill">Java <i>50%</i></span><div class="bar-wrap"><div class="bar" style="width:72%"></div></div></div>
-          <div class="progress"><span class="skill">RAG<i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+          <div class="progress"><span class="skill">RAG <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
           <div class="progress"><span class="skill">Prompt Engineering<i>90%</i></span><div class="bar-wrap"><div class="bar" style="width:90%"></div></div></div>
-          <div class="progress"><span class="skill">HTML/CSS <i>78%</i></span><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></div>
           <div class="progress"><span class="skill">PyTorch <i>55%</i></span><div class="bar-wrap"><div class="bar" style="width:55%"></div></div></div>
           <div class="progress"><span class="skill">scikit-learn <i>60%</i></span><div class="bar-wrap"><div class="bar" style="width:60%"></div></div></div>
           <div class="progress"><span class="skill">LangChain <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
-          
         </div>
-        <div>
+        <div class="skill-panel">
+          <h3><i class="bi bi-stack"></i> Data, Web &amp; Tools</h3>
           <div class="progress"><span class="skill">Pandas <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
-          <div class="progress"><span class="skill">NumPy <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:88%"></div></div></div>
-          <div class="progress"><span class="skill">Javascript <i>70%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+          <div class="progress"><span class="skill">NumPy <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+          <div class="progress"><span class="skill">Java <i>50%</i></span><div class="bar-wrap"><div class="bar" style="width:50%"></div></div></div>
+          <div class="progress"><span class="skill">JavaScript <i>70%</i></span><div class="bar-wrap"><div class="bar" style="width:70%"></div></div></div>
           <div class="progress"><span class="skill">React <i>85%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+          <div class="progress"><span class="skill">HTML/CSS <i>78%</i></span><div class="bar-wrap"><div class="bar" style="width:78%"></div></div></div>
           <div class="progress"><span class="skill">MySQL <i>70%</i></span><div class="bar-wrap"><div class="bar" style="width:70%"></div></div></div>
-          <div class="progress"><span class="skill">MongoDB<i>80%</i></span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div></div>
+          <div class="progress"><span class="skill">MongoDB <i>80%</i></span><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></div>
           <div class="progress"><span class="skill">Git / GitHub <i>80%</i></span><div class="bar-wrap"><div class="bar" style="width:80%"></div></div></div>
         </div>
       </div>
+      <p class="skill-note">My strongest focus is building reliable GenAI systems, from retrieval and prompt design to the APIs and interfaces that make them useful.</p>
     </div>
   </section>
 
@@ -609,7 +641,7 @@ section{padding:60px 0;overflow:hidden}
   <section id="events">
     <div class="container">
       <div class="section-title">
-        <h2>Seminars, Conferences &amp; Competitions</h2>
+        <h2>Seminars,Competitions</h2>
         <p>Events I've taken part in, and moments from competitions and milestones.</p>
       </div>
 
@@ -628,7 +660,7 @@ section{padding:60px 0;overflow:hidden}
     <div class="container">
       <div class="section-title">
         <h2>Contact</h2>
-        <p>I'm passionate about solving real-world problems with AI and machine learning. Whether you want to collaborate on a project, discuss research ideas, or offer an internship or full-time role — I'd love to hear from you.</p>
+        <p>I build practical AI and machine learning solutions for real-world challenges. If you have a project idea, research opportunity, or role in mind, I'd love to connect and explore how we can create something meaningful together.</p>
       </div>
 
       <div class="contact-grid">
